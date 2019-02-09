@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v_main_vertical"
+        android:layout_width="@dimen/line_width"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlack"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/vertical_line_top_margin"
+        android:layout_above="@+id/v_main_horizontal"/>
+
+    <View
+        android:id="@+id/v_main_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_width"
+        android:background="@color/colorBlack"
+        android:layout_above="@+id/ll_utils_main"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/ll_degrees_margin_left"
+        android:layout_marginTop="@dimen/ll_degrees_margin_top"
+        android:layout_marginStart="@dimen/ll_degrees_margin_left">
+
+        <TextView
+            android:id="@+id/lbl_first_degrees_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_degrees"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/lbl_real_degrees_to_measure_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/final_degrees"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/lbl_degrees_to_measure_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/real_degrees_to_measure"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/lbl_degrees_measured_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degrees_measured"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput_degreesToMeasure_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat"
+        android:layout_above="@+id/v_main_horizontal"
+        android:layout_marginLeft="@dimen/edittext_degrees_margin_left"
+        android:layout_marginStart="@dimen/edittext_degrees_margin_left">
+
+        <EditText
+            android:id="@+id/txt_degreesToMeasure_main"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_degrees_to_measure_main"
+            android:inputType="text"
+            android:hint="@string/degrees_to_measure"
+            android:textColor="@color/colorPrimary"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lbl_start_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/lbl_degrees_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_degrees_font_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/text_degrees_right_margin"
+        android:layout_marginBottom="@dimen/text_degrees_bottom_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/text_degrees_right_margin" />
+
+    <LinearLayout
+        android:id="@+id/ll_utils_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/ll_utils_bottom_margin"
+        android:layout_marginTop="@dimen/ll_utils_top_margin">
+
+        <Button
+            android:id="@+id/btn_degrees_main"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="wrap_content"
+            android:text="@string/medir"
+            android:layout_marginLeft="@dimen/first_button_left_margin"
+            android:layout_marginRight="@dimen/first_button_right_margin"
+            android:background="@color/colorPrimary"
+            android:layout_marginStart="@dimen/first_button_left_margin"
+            android:layout_marginEnd="@dimen/first_button_right_margin" />
+
+        <Button
+            android:id="@+id/btn_resetDegrees_main"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="vertical_line_top_margin">10dp</dimen>
+    <dimen name="vertical_line_bottom_margin">50dp</dimen>
+    <dimen name="horizontal_line_bottom_margin">50dp</dimen>
+    <dimen name="horizontal_line_sides_margin">10dp</dimen>
+    <dimen name="line_width">2dp</dimen>
+    <dimen name="main_buttons_width">120dp</dimen>
+    <dimen name="first_button_left_margin">7dp</dimen>
+    <dimen name="text_degrees_font_size">25sp</dimen>
+    <dimen name="text_degrees_right_margin">10dp</dimen>
+    <dimen name="text_degrees_bottom_margin">10dp</dimen>
+    <dimen name="edittext_degrees_margin_left">5dp</dimen>
+    <dimen name="ll_degrees_margin_left">5dp</dimen>
+    <dimen name="ll_degrees_margin_top">5dp</dimen>
+    <dimen name="first_button_right_margin">5dp</dimen>
+    <dimen name="ll_utils_bottom_margin">5dp</dimen>
+    <dimen name="ll_utils_top_margin">5dp</dimen>
+
+</resources>

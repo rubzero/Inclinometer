@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Inclinometer</string>
+    <string name="zero">0</string>
+    <string name="medir">Medir</string>
+    <string name="reset">Reset</string>
+    <string name="first_degrees">Ángulo inicial: </string>
+    <string name="degrees_to_measure">Ángulo a medir: </string>
+    <string name="real_degrees_to_measure">Ángulo real: </string>
+    <string name="degrees_measured">Medido: </string>
+    <string name="final_degrees">Ángulo final:</string>
+</resources>
