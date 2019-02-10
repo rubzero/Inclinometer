@@ -1,42 +1,43 @@
 package com.example.rubze.inclinometer;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Camera;
 import android.util.Log;
-import android.util.Size;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import java.io.IOException;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
-/** A basic Camera preview class */
+@SuppressLint("ViewConstructor")
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
 
-    private SurfaceHolder mHolder;
-    private Camera mCamera;
+    private SurfaceHolder surfaceHolder;
+    private Camera camera;
 
     public CameraPreview(Context context, Camera camera) {
         super(context);
-        mCamera = camera;
+        this.camera = camera;
 
-        // Install a SurfaceHolder.Callback so we get notified when the
-        // underlying surface is created and destroyed.
-        mHolder = getHolder();
-        mHolder.addCallback(this);
-        // deprecated setting, but required on Android versions prior to 3.0
-        mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        /*
+        Install a SurfaceHolder. Callback so we get notified when the
+        underlying surface is created and destroyed.
+        */
+        surfaceHolder = getHolder();
+        surfaceHolder.addCallback(this);
+        /* Deprecated setting, but required on Android versions prior to 3.0 */
+        surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
-        // The Surface has been created, now tell the camera where to draw the preview.
+        /* The Surface has been created, now tell the camera where to draw the preview. */
         try {
-            if(mCamera == null)
-                mCamera = Camera.open();
-            mCamera.setPreviewDisplay(holder);
-            mCamera.startPreview();
+            if(camera == null)
+                camera = Camera.open();
+            camera.setPreviewDisplay(holder);
+            camera.startPreview();
 
         } catch (IOException e) {
             Log.d(TAG, "Error setting camera preview: " + e.getMessage());
@@ -44,39 +45,36 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public void surfaceDestroyed(SurfaceHolder holder) {
-        // empty. Take care of releasing the Camera preview in your activity.
+        /* Empty. Take care of releasing the Camera preview in your activity. */
     }
 
     public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
-        // If your preview can change or rotate, take care of those events here.
-        // Make sure to stop the preview before resizing or reformatting it.
+        /*
+        If your preview can change or rotate, take care of those events here.
+        Make sure to stop the preview before resizing or reformatting it.
+         */
 
-        if (mHolder.getSurface() == null){
-            // preview surface does not exist
+        if (surfaceHolder.getSurface() == null){
+            /* Preview surface does not exist */
             return;
         }
 
-        // stop preview before making changes
+        /* Stop preview before making changes */
         try {
-            mCamera.stopPreview();
-        } catch (Exception e){
-            // ignore: tried to stop a non-existent preview
-        }
+            camera.stopPreview();
+        } catch (Exception ignored){}
 
-        // set preview size and make any resize, rotate or
-        // reformatting changes here
+        /*
+        Set preview size and make any resize, rotate or reformatting changes here
+        */
 
-        // start preview with new settings
+        /* Start preview with new settings */
         try {
-            mCamera.setPreviewDisplay(mHolder);
-            mCamera.setDisplayOrientation(90);
-            mCamera.startPreview();
+            camera.setPreviewDisplay(surfaceHolder);
+            camera.setDisplayOrientation(90);
+            camera.startPreview();
         } catch (Exception e){
             Log.d(TAG, e.toString());
         }
-    }
-
-    public void setmCamera(Camera mCamera) {
-        this.mCamera = mCamera;
     }
 }

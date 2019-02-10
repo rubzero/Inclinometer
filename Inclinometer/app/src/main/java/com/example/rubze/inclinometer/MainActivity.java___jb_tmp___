@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     /* Call degrees and color format on phone rotation methods */
     @Override
     public void onSensorChanged(SensorEvent event) {
-        currentDegrees = Utilities.getDegrees(getOrientations(event));
+        currentDegrees = Utilities.getDegrees(Utilities.getOrientations(event));
         setDegrees();
         if(measuring)
             changeGUIColor();
@@ -263,24 +263,5 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                                 MY_PERMISSIONS_REQUEST_READ_CONTACTS);
                     }
         }
-    }
-
-    /* Gets and transform rotation sensor into 3 size degrees array */
-    public static float[] getOrientations(SensorEvent sensorEvent){
-        float[] orientations = new float[3];
-        float[] rotationMatrix = new float[16];
-        float[] remappedRotationMatrix = new float[16];
-
-        SensorManager.getRotationMatrixFromVector(
-                rotationMatrix, sensorEvent.values);
-        SensorManager.remapCoordinateSystem(rotationMatrix,
-                SensorManager.AXIS_X,
-                SensorManager.AXIS_Z,
-                remappedRotationMatrix);
-        SensorManager.getOrientation(remappedRotationMatrix, orientations);
-        for(int i = 0; i < 3; i++) {
-            orientations[i] = (float)(Math.toDegrees(orientations[i]));
-        }
-        return orientations;
     }
 }

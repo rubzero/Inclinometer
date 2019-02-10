@@ -3,9 +3,9 @@
     <string name="zero">0</string>
     <string name="medir">Medir</string>
     <string name="reset">Reset</string>
-    <string name="first_degrees">Ángulo inicial: </string>
-    <string name="degrees_to_measure">Ángulo a medir: </string>
-    <string name="real_degrees_to_measure">Ángulo real: </string>
-    <string name="degrees_measured">Medido: </string>
-    <string name="final_degrees">Ángulo final:</string>
+    <string name="first_degrees">Ángulo inicial: %1$dº</string>
+    <string name="degrees_to_measure">Ángulo a medir: %1$sº</string>
+    <string name="real_degrees_to_measure">Ángulo real: %1$dº</string>
+    <string name="degrees_measured">Medido: %1$dº</string>
+    <string name="final_degrees">Ángulo final: %1$dº</string>
 </resources>
